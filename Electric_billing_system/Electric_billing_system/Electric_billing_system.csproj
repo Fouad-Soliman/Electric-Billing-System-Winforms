@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49C869C7-97F0-4E39-889B-63335424A05A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Electric_billing_system</RootNamespace>
+    <AssemblyName>Electric_billing_system</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>D:\Self-Diagnosis-Sp-main\x64\Debug\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>D:\Self-Diagnosis-Sp-main\x64\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>D:\Self-Diagnosis-Sp-main\x64\Debug\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DarrenLee.Media">
+      <HintPath>D:\Self-Diagnosis-Sp-main\x64\Debug\DarrenLee.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WMPLib.1.0">
+      <HintPath>D:\Self-Diagnosis-Sp-main\x64\Debug\Interop.WMPLib.1.0.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="messageboxmanager">
+      <HintPath>D:\Self-Diagnosis-Sp-main\x64\Debug\messageboxmanager.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\app\Mohamed\product\11.2.0\dbhome_1\ODP.NET\bin\2.x\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Siticone.Desktop.UI">
+      <HintPath>..\..\..\..\Documents\GitHub\Electric\Electric_billing_system\Electric_billing_system\bin\Debug\Siticone.Desktop.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Siticone.UI">
+      <HintPath>D:\Self-Diagnosis-Sp-main\Siticone.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Admin Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin Menu.Designer.cs">
+      <DependentUpon>Admin Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_Login.designer.cs">
+      <DependentUpon>Admin_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Bills\BillsMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Bills\BillsMenu.Designer.cs">
+      <DependentUpon>BillsMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PowerHouse\AddPH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PowerHouse\AddPH.designer.cs">
+      <DependentUpon>AddPH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PowerHouse\ViewPH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PowerHouse\ViewPH.designer.cs">
+      <DependentUpon>ViewPH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewSystemlog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewSystemlog.Designer.cs">
+      <DependentUpon>ViewSystemlog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PowerHouse\ManagePH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PowerHouse\ManagePH.designer.cs">
+      <DependentUpon>ManagePH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Edit Customer\ManageCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Edit Customer\ManageCustomers.designer.cs">
+      <DependentUpon>ManageCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Edit Customer\CutomerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Edit Customer\CutomerEdit.designer.cs">
+      <DependentUpon>CutomerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Edit Customer\MetersEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Edit Customer\MetersEdit.designer.cs">
+      <DependentUpon>MetersEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Change Account Information\Account_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change Account Information\Account_Settings.designer.cs">
+      <DependentUpon>Account_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Change Account Information\Camera_winform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change Account Information\Camera_winform.designer.cs">
+      <DependentUpon>Camera_winform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Change Account Information\ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change Account Information\ForgotPassword.designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Change Account Information\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change Account Information\Form2.designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Change Account Information\Two_Step.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change Account Information\Two_Step.designer.cs">
+      <DependentUpon>Two_Step.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Functions\PayBill\credit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Functions\PayBill\credit.designer.cs">
+      <DependentUpon>credit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Functions\PayBill\Pay_Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Functions\PayBill\Pay_Bill.designer.cs">
+      <DependentUpon>Pay_Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SYSTEM_LOG_REPORT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SYSTEM_LOG_REPORT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Customer\Customer_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Customer_Login.designer.cs">
+      <DependentUpon>Customer_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Customer_registeration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Customer_registeration.designer.cs">
+      <DependentUpon>Customer_registeration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Bills\Approve_Cashed_Bills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Bills\Approve_Cashed_Bills.designer.cs">
+      <DependentUpon>Approve_Cashed_Bills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Bills\CreateBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Bills\CreateBill.designer.cs">
+      <DependentUpon>CreateBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Functions\MeterBillsCrystal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MeterBillsCrystal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Customer\Customer_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Customer_Menu.designer.cs">
+      <DependentUpon>Customer_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Welcome_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome_Form.Designer.cs">
+      <DependentUpon>Welcome_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Functions\Print_Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Functions\Print_Invoice.Designer.cs">
+      <DependentUpon>Print_Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\Admin Menu.resx">
+      <DependentUpon>Admin Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Admin_Login.resx">
+      <DependentUpon>Admin_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Bills\BillsMenu.resx">
+      <DependentUpon>BillsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PowerHouse\AddPH.resx">
+      <DependentUpon>AddPH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PowerHouse\ViewPH.resx">
+      <DependentUpon>ViewPH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ViewSystemlog.resx">
+      <DependentUpon>ViewSystemlog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PowerHouse\ManagePH.resx">
+      <DependentUpon>ManagePH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Edit Customer\ManageCustomers.resx">
+      <DependentUpon>ManageCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Edit Customer\CutomerEdit.resx">
+      <DependentUpon>CutomerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Edit Customer\MetersEdit.resx">
+      <DependentUpon>MetersEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change Account Information\Account_Settings.resx">
+      <DependentUpon>Account_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change Account Information\ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change Account Information\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change Account Information\Two_Step.resx">
+      <DependentUpon>Two_Step.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Functions\PayBill\credit.resx">
+      <DependentUpon>credit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Functions\PayBill\Pay_Bill.resx">
+      <DependentUpon>Pay_Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\SYSTEM_LOG_REPORT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SYSTEM_LOG_REPORT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Customer_Login.resx">
+      <DependentUpon>Customer_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Customer_registeration.resx">
+      <DependentUpon>Customer_registeration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Bills\Approve_Cashed_Bills.resx">
+      <DependentUpon>Approve_Cashed_Bills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Bills\CreateBill.resx">
+      <DependentUpon>CreateBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Functions\MeterBillsCrystal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MeterBillsCrystal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Customer_Menu.resx">
+      <DependentUpon>Customer_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome_Form.resx">
+      <DependentUpon>Welcome_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Functions\Print_Invoice.resx">
+      <DependentUpon>Print_Invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
