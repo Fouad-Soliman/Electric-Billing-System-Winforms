@@ -31,29 +31,39 @@ namespace Electric_billing_system
 
         private void Login_Click(object sender, EventArgs e)
         {
-            string userEmail = userEmail_textbox.Text;
-            string userPassword = userPassword_textbox.Text;
+            string userEmail = userEmail_textbox.Text.ToString();
+            string userPassword = userPassword_textbox.Text.ToString();
             conn = new OracleConnection(ordb);
             try
             {
                 conn.Open();
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT CUSTOMERID,Two_step,Email FROM CUSTOMER WHERE UserName = :userEmail AND USERPASSWORD = :userPassword";
+                cmd.CommandText = "SELECT Two_step,Email FROM CUSTOMER WHERE UserName = :userEmail AND USERPASSWORD = :userPassword";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add(":userEmail", userEmail);
                 cmd.Parameters.Add(":userPassword", userPassword);
                 OracleDataReader dr = cmd.ExecuteReader();
+                OracleCommand cmd2 = new OracleCommand();
+                cmd2.Connection = conn;
+                cmd2.CommandText = "GetC_ID";
+                cmd2.CommandType = CommandType.StoredProcedure;
+                cmd2.Parameters.Add("Username", OracleDbType.Varchar2).Value = userEmail;
+                cmd2.Parameters.Add("Passw", OracleDbType.Varchar2).Value = userPassword;
+                cmd2.Parameters.Add("CID", OracleDbType.Decimal).Direction = ParameterDirection.Output;
+                cmd2.ExecuteNonQuery();
+                String customerId = cmd2.Parameters["CID"].Value.ToString();
+
                 if (dr.HasRows)
                 {
                     dr.Read();
                     if (dr[0].ToString() != null)
                     {
-                        if (dr[1].ToString() == "F" || CameFrom_ChangePass == true)
+                        if (dr[0].ToString() == "F" || CameFrom_ChangePass == true)
                         {
                             CameFrom_ChangePass = false;
                             MessageBox.Show("Login successful!");
-                            Customer_Menu cm = new Customer_Menu(dr[0].ToString());
+                            Customer_Menu cm = new Customer_Menu(customerId.ToString());
                             this.Hide();
                             cm.ShowDialog();
                         }
@@ -97,7 +107,7 @@ namespace Electric_billing_system
                             if (ts.getStep() == 'T')
                             {
                                 MessageBox.Show("Login successful!");
-                                Customer_Menu cm = new Customer_Menu(dr[0].ToString());
+                                Customer_Menu cm = new Customer_Menu(customerId.ToString());
                                 this.Hide();
                                 cm.ShowDialog();
                             }

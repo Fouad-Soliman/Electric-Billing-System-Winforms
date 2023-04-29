@@ -22,7 +22,7 @@ namespace Electric_billing_system
         string  billid;
         public Pay_Bill(string c_id)
         {
-            CustID= Convert.ToInt32( c_id);
+            CustID= Convert.ToInt32(c_id);
             InitializeComponent();
         }
         private void Form2_Load(object sender, EventArgs e)
@@ -64,9 +64,14 @@ namespace Electric_billing_system
             dr.Close();
             OracleCommand cmd2 = new OracleCommand();
             cmd2.Connection = conn;
-            cmd2.CommandText = $"select Billid from Bill where  Approved <> 'y' and  CustomerID={CustID} and meterid={meter_choice.Text}";
-            cmd2.CommandType = CommandType.Text;
+            cmd2.CommandText = "GetBills";
+            cmd2.CommandType = CommandType.StoredProcedure;
+            cmd2.Parameters.Add("Meter", Convert.ToInt32(meter_choice.Text.ToString()));
+            cmd2.Parameters.Add("CustID", CustID);
+            cmd2.Parameters.Add("BillIDs", OracleDbType.RefCursor, ParameterDirection.Output);
             OracleDataReader dr2 = cmd2.ExecuteReader();
+            
+
             while (dr2.Read())
             {
                 billidcmb.Items.Add(dr2[0]);
