@@ -14,10 +14,12 @@ namespace Electric_billing_system
 {
     public partial class ApproveBills : Form
     {
+        int A_id;
         string ordb = "Data source = orcl; User Id = scott; password = tiger; ";
         OracleConnection conn;
-        public ApproveBills()
+        public ApproveBills(int a_id)
         {
+            A_id = a_id;
             InitializeComponent();
         }
 
@@ -73,6 +75,12 @@ namespace Electric_billing_system
             cmd4.CommandText = "update bill set PAYMENTSTATUS = 'y' where Billid = :Billid";
             cmd4.Parameters.Add("Billid", BilliD_comboBox.SelectedItem.ToString());
             int r = cmd4.ExecuteNonQuery();
+            Electric_billing_system.Account_Settings.Notification(CustomerID_textBox.Text,"CASH",TotalFees_textBox.Text,PaymentDate_textBox.Text);
+            OracleCommand cmd6 = new OracleCommand();
+            cmd6.Connection = conn;
+
+            cmd6.CommandText = $"insert into SYSLOG (ADMINID,ACTIONDATETIME,ACTION,METERID,POWERHOUSEID) values ({A_id}, systimestamp, 'Cashed Bill Approved', {MeterID_textBox.Text.ToString()}, Null)";
+            int x = cmd6.ExecuteNonQuery();
             if (r != -1) 
             {
                 MessageBox.Show("Bill Approved");

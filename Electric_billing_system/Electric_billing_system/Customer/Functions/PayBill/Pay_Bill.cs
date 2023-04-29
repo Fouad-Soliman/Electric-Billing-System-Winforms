@@ -80,6 +80,7 @@ namespace Electric_billing_system
                 cmd2.Connection = conn;
                 cmd2.CommandText = "update bill set approved='n',paymenttype='cash' where meterid=:id ";
 
+
               cmd2.Parameters.Add("id", meter_choice.SelectedItem.ToString());
                 int r=cmd2.ExecuteNonQuery();
                 if (r!=-1)

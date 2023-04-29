@@ -18,8 +18,11 @@ namespace Electric_billing_system
         OracleDataAdapter adapter;
         OracleCommandBuilder builder;
         DataSet ds;
-        public CustomerEdit()
+        OracleConnection conn;
+        int A_ID;
+        public CustomerEdit(int a_id)
         {
+            A_ID=a_id;
             InitializeComponent();
         }
 
@@ -33,6 +36,10 @@ namespace Electric_billing_system
 
         private void save_button_Click(object sender, EventArgs e)
         {
+            DialogResult res = MessageBox.Show($"Are you sure you want to Save current Customers edits?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+
                 try
                 {
                     builder = new OracleCommandBuilder(adapter);
@@ -42,6 +49,16 @@ namespace Electric_billing_system
                 {
                     MessageBox.Show(ex.Message);
                 }
+
+                OracleCommand cmd6 = new OracleCommand();
+                conn = new OracleConnection(constr);
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd6.Connection = conn;
+                cmd6.CommandText = $"insert into SYSLOG (ADMINID,ACTIONDATETIME,ACTION,METERID,POWERHOUSEID) values ({A_ID}, systimestamp, 'Update Customer Database', NULL, Null)";
+                int x = cmd6.ExecuteNonQuery();
+            }
+
 
             }
         

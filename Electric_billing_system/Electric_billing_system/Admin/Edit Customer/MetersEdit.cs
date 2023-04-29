@@ -17,9 +17,12 @@ namespace Electric_billing_system
         string cmdstr = "select * from meter";
         OracleDataAdapter adapter;
         OracleCommandBuilder builder;
+        OracleConnection conn;
         DataSet ds;
-        public MeterEdit()
+        int A_id;
+        public MeterEdit(int a_id)
         {
+            A_id = a_id;
             InitializeComponent();
         }
 
@@ -33,14 +36,27 @@ namespace Electric_billing_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            DialogResult res = MessageBox.Show($"Are you sure you want to Save current Customers edits?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
             {
-                builder = new OracleCommandBuilder(adapter);
-                adapter.Update(ds.Tables[0]);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+
+                try
+                {
+                    builder = new OracleCommandBuilder(adapter);
+                    adapter.Update(ds.Tables[0]);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                OracleCommand cmd6 = new OracleCommand();
+                conn = new OracleConnection(constr);
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd6.Connection = conn;
+                cmd6.CommandText = $"insert into SYSLOG (ADMINID,ACTIONDATETIME,ACTION,METERID,POWERHOUSEID) values ({A_id}, systimestamp, 'Update Meter Database', NULL, Null)";
+                int x = cmd6.ExecuteNonQuery();
             }
         }
     }

@@ -1743,11 +1743,45 @@
             }
 
         }
+		public static void Notification(string id,string M_ID,string add,string CR,string PR,string con_type, string TotalAmount)
+		{
+			string email = getCustomerFromDataBase(id, "EMAIL", "Customer");
+			string NationalID = getCustomerFromDataBase(id, "NationalID", "Customer");
+			string Name = getCustomerFromDataBase(id, "FirstName", "Customer") + " " + getCustomerFromDataBase(id, "LastName", "Customer");
+			string from, pass, MessageBody;
+			MailMessage message = new MailMessage();
+			from = "selfdiagnosissupp@gmail.com";
+			pass = "eomootfkfmpefvut";
+			MessageBody = $"Dear Customer'{Name}'\nA new Bill is issued for your meter\nMeterID: {M_ID}\nAddress: {add}\nConnectionType: {con_type},\nPrevious reading{PR},\nCurrent Reading:{CR},TOTAL Amount:{TotalAmount},\nThank you for using our System ";
+			String From = from;
+			String MB = MessageBody;
+			String To;
+			String Pass = pass;
+			message.From = new MailAddress(From);
+			message.Body = MB;
+			message.Subject = "Bill Payment.";
+			To = email;
+			SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+			smtp.EnableSsl = true;
+			message.To.Add(To);
+			smtp.Port = 587;
+			smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+			smtp.Credentials = new NetworkCredential(From, Pass);
+			try
+			{
+				smtp.SendMailAsync(message);
+				message.To.Clear();
+			}
+			catch (Exception ex)
+			{
+			}
+
+		}
 
 
 
 
-        public static bool TwoStep(string id)
+		public static bool TwoStep(string id)
         {
             string email = getCustomerFromDataBase(id, "EMAIL", "Customer");
             string from, pass, MessageBody;

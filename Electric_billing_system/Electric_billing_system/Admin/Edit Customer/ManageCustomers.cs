@@ -16,8 +16,10 @@ namespace Electric_billing_system
     {
         string ordb = "Data source=orcl;User Id=scott;Password=tiger;";
         OracleConnection conn;
-        public Manage_customers()
+        int a_id;
+        public Manage_customers(int a)
         {
+            a_id = a;
             InitializeComponent();
         }
 
@@ -32,7 +34,7 @@ namespace Electric_billing_system
         private void viewbut_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MeterEdit ME = new MeterEdit();
+            MeterEdit ME = new MeterEdit(a_id);
             ME.ShowDialog();
             this.Show();
 
@@ -45,7 +47,7 @@ namespace Electric_billing_system
         private void Edit_Customers_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Electric_billing_system.CustomerEdit CE = new CustomerEdit();
+            Electric_billing_system.CustomerEdit CE = new CustomerEdit(a_id);
             CE.ShowDialog();
             this.Show();
         }

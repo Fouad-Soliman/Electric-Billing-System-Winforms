@@ -16,8 +16,11 @@ namespace Electric_billing_system
     {
         string ordb = "Data source=orcl;User Id=scott;Password=tiger;";
         OracleConnection conn;
-        public ManagePH()
+        int a_id;
+        public ManagePH(int A_id)
         {
+            a_id = A_id;
+
             InitializeComponent();
         }
 
@@ -40,7 +43,7 @@ namespace Electric_billing_system
 
         private void addbut_Click(object sender, EventArgs e)
         {
-            Electric_billing_system.AddPH addf = new Electric_billing_system.AddPH();
+            Electric_billing_system.AddPH addf = new Electric_billing_system.AddPH(a_id);
            
             addf.ShowDialog();
             cmbph.Items.Add(addf.Powerhousename);
@@ -88,7 +91,7 @@ namespace Electric_billing_system
             if (cmbph.Text != "Select PowerHouse")
             {
                 string selectedphName = cmbph.SelectedItem.ToString();
-                Electric_billing_system.ViewPH viewf = new Electric_billing_system.ViewPH(selectedphName);
+                Electric_billing_system.ViewPH viewf = new Electric_billing_system.ViewPH(selectedphName,a_id);
                 viewf.Show();
             }
             else

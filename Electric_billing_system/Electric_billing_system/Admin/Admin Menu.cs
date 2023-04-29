@@ -22,7 +22,7 @@ namespace Electric_billing_system
         private void Mange_pHBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Electric_billing_system.ManagePH  mPH = new Electric_billing_system.ManagePH();
+            Electric_billing_system.ManagePH  mPH = new Electric_billing_system.ManagePH(A_id);
             mPH.ShowDialog();
             this.Show();
         }
@@ -30,7 +30,7 @@ namespace Electric_billing_system
         private void Edit_Customer_Pic_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Manage_customers MC = new Manage_customers();
+            Manage_customers MC = new Manage_customers(A_id);
             MC.ShowDialog();
             this.Show();
         }
@@ -55,6 +55,29 @@ namespace Electric_billing_system
         private void Admin_Menu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+            if (DropDown_Customer.Visible == true)
+            {
+                DropDown_Customer.Hide();
+                Logout_label.Hide();
+                Logout_pictureBox.Hide();
+                Quit_label.Hide();
+                Quit_pictureBox.Hide();
+                
+            }
+            else
+            {
+                DropDown_Customer.Show();
+                Logout_label.Show();
+                Logout_pictureBox.Show();
+                Quit_label.Show();
+                Quit_pictureBox.Show();
+                
+            }
         }
     }
 }

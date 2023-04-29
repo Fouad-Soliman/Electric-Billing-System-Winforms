@@ -43,11 +43,12 @@
             this.Connection_Type_txtbox = new System.Windows.Forms.TextBox();
             this.Address_label = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pay_button
             // 
-            this.pay_button.Location = new System.Drawing.Point(104, 286);
+            this.pay_button.Location = new System.Drawing.Point(277, 282);
             this.pay_button.Margin = new System.Windows.Forms.Padding(4);
             this.pay_button.Name = "pay_button";
             this.pay_button.Size = new System.Drawing.Size(100, 28);
@@ -81,7 +82,7 @@
             this.Previous_read_label.Location = new System.Drawing.Point(39, 133);
             this.Previous_read_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Previous_read_label.Name = "Previous_read_label";
-            this.Previous_read_label.Size = new System.Drawing.Size(109, 16);
+            this.Previous_read_label.Size = new System.Drawing.Size(115, 17);
             this.Previous_read_label.TabIndex = 12;
             this.Previous_read_label.Text = "Previous reading";
             // 
@@ -91,7 +92,7 @@
             this.label7.Location = new System.Drawing.Point(184, 32);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 16);
+            this.label7.Size = new System.Drawing.Size(61, 17);
             this.label7.TabIndex = 16;
             this.label7.Text = "Meter ID";
             // 
@@ -110,7 +111,7 @@
             this.label1.Location = new System.Drawing.Point(229, 175);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 16);
+            this.label1.Size = new System.Drawing.Size(39, 17);
             this.label1.TabIndex = 18;
             this.label1.Text = "Fees";
             // 
@@ -120,7 +121,7 @@
             this.Current_read_label.Location = new System.Drawing.Point(375, 133);
             this.Current_read_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Current_read_label.Name = "Current_read_label";
-            this.Current_read_label.Size = new System.Drawing.Size(96, 16);
+            this.Current_read_label.Size = new System.Drawing.Size(105, 17);
             this.Current_read_label.TabIndex = 21;
             this.Current_read_label.Text = "current reading";
             // 
@@ -136,22 +137,22 @@
             // creditCard_rdio
             // 
             this.creditCard_rdio.AutoSize = true;
-            this.creditCard_rdio.Location = new System.Drawing.Point(302, 213);
+            this.creditCard_rdio.Location = new System.Drawing.Point(335, 241);
             this.creditCard_rdio.Margin = new System.Windows.Forms.Padding(4);
             this.creditCard_rdio.Name = "creditCard_rdio";
-            this.creditCard_rdio.Size = new System.Drawing.Size(135, 20);
+            this.creditCard_rdio.Size = new System.Drawing.Size(100, 21);
             this.creditCard_rdio.TabIndex = 1;
             this.creditCard_rdio.TabStop = true;
-            this.creditCard_rdio.Text = "pay by credit card";
+            this.creditCard_rdio.Text = "Credit Card";
             this.creditCard_rdio.UseVisualStyleBackColor = true;
             // 
             // Cash_rdio
             // 
             this.Cash_rdio.AutoSize = true;
-            this.Cash_rdio.Location = new System.Drawing.Point(224, 213);
+            this.Cash_rdio.Location = new System.Drawing.Point(257, 241);
             this.Cash_rdio.Margin = new System.Windows.Forms.Padding(4);
             this.Cash_rdio.Name = "Cash_rdio";
-            this.Cash_rdio.Size = new System.Drawing.Size(59, 20);
+            this.Cash_rdio.Size = new System.Drawing.Size(61, 21);
             this.Cash_rdio.TabIndex = 0;
             this.Cash_rdio.TabStop = true;
             this.Cash_rdio.Text = "Cash";
@@ -163,7 +164,7 @@
             this.Connection_type.Location = new System.Drawing.Point(39, 85);
             this.Connection_type.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Connection_type.Name = "Connection_type";
-            this.Connection_type.Size = new System.Drawing.Size(103, 16);
+            this.Connection_type.Size = new System.Drawing.Size(110, 17);
             this.Connection_type.TabIndex = 25;
             this.Connection_type.Text = "Connection type";
             // 
@@ -182,7 +183,7 @@
             this.Address_label.Location = new System.Drawing.Point(375, 86);
             this.Address_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Address_label.Name = "Address_label";
-            this.Address_label.Size = new System.Drawing.Size(58, 16);
+            this.Address_label.Size = new System.Drawing.Size(60, 17);
             this.Address_label.TabIndex = 23;
             this.Address_label.Text = "Address";
             // 
@@ -195,12 +196,23 @@
             this.Address.Size = new System.Drawing.Size(132, 22);
             this.Address.TabIndex = 22;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(274, 211);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 17);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Payment Method";
+            // 
             // Pay_Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(694, 355);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Connection_type);
             this.Controls.Add(this.Connection_Type_txtbox);
             this.Controls.Add(this.Address_label);
@@ -241,5 +253,6 @@
         private System.Windows.Forms.TextBox Connection_Type_txtbox;
         private System.Windows.Forms.Label Address_label;
         private System.Windows.Forms.TextBox Address;
+        private System.Windows.Forms.Label label2;
     }
 }

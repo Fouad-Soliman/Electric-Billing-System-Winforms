@@ -40,11 +40,19 @@ namespace Electric_billing_system
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Quit_pictureBox = new System.Windows.Forms.PictureBox();
+            this.Logout_pictureBox = new System.Windows.Forms.PictureBox();
+            this.Quit_label = new System.Windows.Forms.Label();
+            this.Logout_label = new System.Windows.Forms.Label();
+            this.DropDown_Customer = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Edit_Customer_Pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mange_pHBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SystemLog_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManageBills_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Quit_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logout_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DropDown_Customer)).BeginInit();
             this.SuspendLayout();
             // 
             // Welcome_label
@@ -105,12 +113,13 @@ namespace Electric_billing_system
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(548, 19);
+            this.pictureBox4.Location = new System.Drawing.Point(688, 12);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(61, 66);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // Edit_Customers
             // 
@@ -160,12 +169,81 @@ namespace Electric_billing_system
             this.label3.TabIndex = 29;
             this.label3.Text = "Manage Bills";
             // 
+            // Quit_pictureBox
+            // 
+            this.Quit_pictureBox.BackColor = System.Drawing.Color.White;
+            this.Quit_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Quit_pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("Quit_pictureBox.Image")));
+            this.Quit_pictureBox.Location = new System.Drawing.Point(656, 175);
+            this.Quit_pictureBox.Name = "Quit_pictureBox";
+            this.Quit_pictureBox.Size = new System.Drawing.Size(43, 36);
+            this.Quit_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Quit_pictureBox.TabIndex = 70;
+            this.Quit_pictureBox.TabStop = false;
+            // 
+            // Logout_pictureBox
+            // 
+            this.Logout_pictureBox.BackColor = System.Drawing.Color.White;
+            this.Logout_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Logout_pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("Logout_pictureBox.Image")));
+            this.Logout_pictureBox.Location = new System.Drawing.Point(649, 120);
+            this.Logout_pictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.Logout_pictureBox.Name = "Logout_pictureBox";
+            this.Logout_pictureBox.Size = new System.Drawing.Size(55, 51);
+            this.Logout_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Logout_pictureBox.TabIndex = 69;
+            this.Logout_pictureBox.TabStop = false;
+            // 
+            // Quit_label
+            // 
+            this.Quit_label.AutoSize = true;
+            this.Quit_label.BackColor = System.Drawing.Color.White;
+            this.Quit_label.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Quit_label.ForeColor = System.Drawing.Color.Blue;
+            this.Quit_label.Location = new System.Drawing.Point(714, 190);
+            this.Quit_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Quit_label.Name = "Quit_label";
+            this.Quit_label.Size = new System.Drawing.Size(37, 19);
+            this.Quit_label.TabIndex = 67;
+            this.Quit_label.Text = "Quit";
+            // 
+            // Logout_label
+            // 
+            this.Logout_label.AutoSize = true;
+            this.Logout_label.BackColor = System.Drawing.Color.White;
+            this.Logout_label.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logout_label.ForeColor = System.Drawing.Color.Blue;
+            this.Logout_label.Location = new System.Drawing.Point(711, 138);
+            this.Logout_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Logout_label.Name = "Logout_label";
+            this.Logout_label.Size = new System.Drawing.Size(53, 19);
+            this.Logout_label.TabIndex = 68;
+            this.Logout_label.Text = "Logout";
+            // 
+            // DropDown_Customer
+            // 
+            this.DropDown_Customer.BackColor = System.Drawing.Color.Transparent;
+            this.DropDown_Customer.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.DropDown_Customer.Image = ((System.Drawing.Image)(resources.GetObject("DropDown_Customer.Image")));
+            this.DropDown_Customer.Location = new System.Drawing.Point(622, 83);
+            this.DropDown_Customer.Margin = new System.Windows.Forms.Padding(2);
+            this.DropDown_Customer.Name = "DropDown_Customer";
+            this.DropDown_Customer.Size = new System.Drawing.Size(167, 162);
+            this.DropDown_Customer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DropDown_Customer.TabIndex = 66;
+            this.DropDown_Customer.TabStop = false;
+            // 
             // Admin_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Quit_pictureBox);
+            this.Controls.Add(this.Logout_pictureBox);
+            this.Controls.Add(this.Quit_label);
+            this.Controls.Add(this.Logout_label);
+            this.Controls.Add(this.DropDown_Customer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -185,6 +263,9 @@ namespace Electric_billing_system
             ((System.ComponentModel.ISupportInitialize)(this.SystemLog_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManageBills_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Quit_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logout_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DropDown_Customer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +283,10 @@ namespace Electric_billing_system
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox Quit_pictureBox;
+        private System.Windows.Forms.PictureBox Logout_pictureBox;
+        private System.Windows.Forms.Label Quit_label;
+        private System.Windows.Forms.Label Logout_label;
+        private System.Windows.Forms.PictureBox DropDown_Customer;
     }
 }

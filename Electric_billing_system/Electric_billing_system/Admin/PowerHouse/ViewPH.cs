@@ -17,10 +17,12 @@ namespace Electric_billing_system
         string ordb = "Data source=orcl;User Id=scott;Password=tiger;";
         OracleConnection conn;
         string phName;
-        public ViewPH(string phName)
+        int A_id;
+        public ViewPH(string phName,int A_id)
         {
             InitializeComponent();
             this.phName=phName;
+            this.A_id = A_id;
         }
 
         private void ViewPH_Load(object sender, EventArgs e)
@@ -48,6 +50,11 @@ namespace Electric_billing_system
 
             }
             dr.Close();
+            OracleCommand cmd6 = new OracleCommand();
+            cmd6.Connection = conn;
+
+            cmd6.CommandText = $"insert into SYSLOG (ADMINID,ACTIONDATETIME,ACTION,METERID,POWERHOUSEID) values ({A_id}, systimestamp, '{nametxt.Text}PowerHouse Viewed ', NULL,{idtxt.Text})";
+            int z = cmd6.ExecuteNonQuery();
         }
 
         private void clsbtn_Click(object sender, EventArgs e)
@@ -89,6 +96,11 @@ namespace Electric_billing_system
                     MessageBox.Show("Power House modified successfully.");
                 }
                 this.Close();
+                OracleCommand cmd6 = new OracleCommand();
+                cmd6.Connection = conn;
+
+                cmd6.CommandText = $"insert into SYSLOG (ADMINID,ACTIONDATETIME,ACTION,METERID,POWERHOUSEID) values ({A_id}, systimestamp, '{nametxt.Text}PowerHouse Edited ', NULL,{idtxt.Text})";
+                int z = cmd6.ExecuteNonQuery();
             }
         }
     }

@@ -30,7 +30,7 @@ namespace Electric_billing_system.Admin.Bills
         private void Approve_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ApproveBills AB = new ApproveBills();
+            ApproveBills AB = new ApproveBills(A_id);
             AB.ShowDialog();
             this.Close();
         }

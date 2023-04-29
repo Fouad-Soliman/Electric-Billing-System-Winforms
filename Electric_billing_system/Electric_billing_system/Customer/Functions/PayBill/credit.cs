@@ -28,7 +28,7 @@ namespace Electric_billing_system
 
         private void credit_Load(object sender, EventArgs e)
         {
-            addcreditcard_btn.Hide();
+           
 
         }
         

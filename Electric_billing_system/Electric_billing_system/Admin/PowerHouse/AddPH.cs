@@ -20,8 +20,10 @@ namespace Electric_billing_system
        
         string ordb = "Data source=orcl;User Id=scott;Password=tiger;";
         OracleConnection conn;
-        public AddPH()
+        int A_id;
+        public AddPH(int a_id)
         {
+            A_id = a_id;
             InitializeComponent();
         }
 
@@ -54,7 +56,15 @@ namespace Electric_billing_system
 
                     }
                 }
-                catch (Exception x) { MessageBox.Show(x.Message); }
+                catch (Exception x) { MessageBox.Show(x.Message);
+                
+                OracleCommand cmd6 = new OracleCommand();
+                cmd6.Connection = conn;
+
+                cmd6.CommandText = $"insert into SYSLOG (ADMINID,ACTIONDATETIME,ACTION,METERID,POWERHOUSEID) values ({A_id}, systimestamp, '{nametxt.Text}PowerHouse Added ', NULL,{idtxt.Text})";
+                int z = cmd6.ExecuteNonQuery();
+
+                }
             }
             this.Close();
            
