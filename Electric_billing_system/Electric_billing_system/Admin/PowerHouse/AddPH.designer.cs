@@ -216,7 +216,7 @@ namespace Electric_billing_system
             this.Name = "AddPH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add";
-            this.Load += new System.EventHandler(this.AddPH_Load);
+        
             this.ResumeLayout(false);
             this.PerformLayout();
 

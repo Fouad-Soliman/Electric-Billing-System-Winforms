@@ -14,7 +14,7 @@ namespace Electric_billing_system
     public partial class MeterEdit : Form
     {
         string constr = "Data Source=ORCL ; User Id=scott; Password=tiger;";
-        string cmdstr = "select * from meter";
+        string cmdstr = "select METERID, CUSTOMERID, CONNECTIONTYPE,PAYMENTRATE,CURRENTREADING,CITY,CITYAREA,PREVIOUSREADING from meter";
         OracleDataAdapter adapter;
         OracleCommandBuilder builder;
         OracleConnection conn;

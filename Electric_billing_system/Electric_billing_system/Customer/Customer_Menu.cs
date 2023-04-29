@@ -93,7 +93,7 @@ namespace Electric_billing_system
                 Settings_label.Show();
                 Account_Settings_pictureBox.Show();
 
-            }
+            }                         
         }
 
         private void pictureBox35_Click(object sender, EventArgs e)

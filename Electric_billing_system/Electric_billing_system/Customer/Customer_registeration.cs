@@ -14,6 +14,7 @@ namespace Electric_billing_system
 {
     public partial class registration_form : Form
     {
+        string twostep = "F";
         static int CustomerID = 0;
         static int MeterID = 8;
         string ordb = "Data source = orcl; User Id = scott; password = tiger; ";
@@ -31,7 +32,7 @@ namespace Electric_billing_system
             conn.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "insert into Customer (CustomerID, Nationalid, Firstname , Lastname , Email , Username, Userpassword) values( :CustomerID, :Nationalid, :Firstname , :Lastname , :Email , :Username, :Userpassword)";
+            cmd.CommandText = $"insert into Customer (CustomerID, Nationalid, Firstname , Lastname , Email , Username, Userpassword,two_step) values( :CustomerID, :Nationalid, :Firstname , :Lastname , :Email , :Username, :Userpassword,'{twostep}')";
                 //"insert into meters (MeterID) values (:MeterID) where CustomerID = :CustomerID ";
                 // + "insert into bill () values ()"
                 // + "insert into customerphones () values ()"
@@ -52,6 +53,17 @@ namespace Electric_billing_system
                 this.Hide();
             }
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                twostep = "T";
+            }
+            else
+                twostep = "F";
+                
         }
     }
 }

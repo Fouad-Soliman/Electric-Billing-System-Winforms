@@ -68,11 +68,17 @@ namespace Electric_billing_system
                     OracleCommand c = new OracleCommand();
                     c.Connection = conn;
 
+                    
                     c.CommandText = "Delete from power_house where power_house_name=:name ";
                     c.Parameters.Add("name", cmbph.Text);
                     int r = c.ExecuteNonQuery();
                     if (r != -1)
                     {
+                        OracleCommand cmd6 = new OracleCommand();
+                        cmd6.Connection = conn;
+
+                        cmd6.CommandText = $"insert into SYSLOG (ADMINID,ACTIONDATETIME,ACTION,METERID,POWERHOUSEID) values ({a_id}, systimestamp, '{cmbph.Text} PH Deleted', NULL,NULL)";
+                        int z = cmd6.ExecuteNonQuery();
                         MessageBox.Show("Power house deleted successfully.");
                         cmbph.Items.RemoveAt(cmbph.SelectedIndex);
 

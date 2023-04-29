@@ -65,12 +65,12 @@ namespace Electric_billing_system
                     cmd3.CommandText = "select city,cityarea,CONNECTIONTYPE,TotalFees from METER where meterID = :meterID";
                     cmd3.Parameters.Add("meterID", MeterID_comboBox.Text.ToString());
                     OracleDataReader reader = cmd3.ExecuteReader();
-
+                    reader.Read();
                     OracleCommand cmd4 = new OracleCommand();
                     OracleCommand cmd5 = new OracleCommand();
                     cmd4.Connection = conn;
                     cmd5.Connection = conn;
-                    cmd4.CommandText = "insert into bill (Billid, MeterID, PreviousReading, IssueDate, CustomerID) values (:BilliD, :MeterID, :PreviousReading, SYSDATE, :CustomerID)";
+                    cmd4.CommandText = "insert into bill (Billid, MeterID, PreviousReading, IssueDate, CustomerID,approved) values (:BilliD, :MeterID, :PreviousReading, SYSDATE, :CustomerID,'n')";
                     cmd5.CommandText = "update meter set (CURRENTREADING) = (:CURRENTREADING) , (PREVIOUSREADING) = (:PREVIOUSREADING) where MeterID = :MeterID";
                     cmd4.Parameters.Add("BilliD", BilliD_textbox.Text.ToString());
                     cmd4.Parameters.Add("MeterID", MeterID_comboBox.Text.ToString());
@@ -83,7 +83,7 @@ namespace Electric_billing_system
                     int v = cmd5.ExecuteNonQuery();
                     if (r != -1 && v != -1)
                     {
-                        Electric_billing_system.Account_Settings.Notification(CustomerID_textBox.Text, MeterID_comboBox.Text, reader[0].ToString() + " " + reader[1].ToString(), CurrentConsumption_TextBox.Text, PreviousConsumption_textbox.Text, reader[3].ToString(), reader[4].ToString());
+                        //Electric_billing_system.Account_Settings.Notification(CustomerID_textBox.Text, MeterID_comboBox.Text, reader[0].ToString() + " " + reader[1].ToString(), CurrentConsumption_TextBox.Text, PreviousConsumption_textbox.Text, reader[2].ToString(), reader[3].ToString());
                         MessageBox.Show("Bill added successfully");
                         OracleCommand cmd6 = new OracleCommand();
                         cmd6.Connection = conn;
@@ -103,14 +103,7 @@ namespace Electric_billing_system
 
         private void CurrentConsumption_TextBox_TextChanged(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(CurrentConsumption_TextBox.Text)< Convert.ToInt32(PreviousConsumption_textbox.Text) || CurrentConsumption_TextBox.Text.ToString()=="")
-            {
-                DialogResult result = MessageBox.Show("Current Consumption cannot be less than the Previous", "Error", MessageBoxButtons.OK);
-                if (result == DialogResult.OK)
-                {
-                    CurrentConsumption_TextBox.Focus();
-                }
-            }
+           
         }
 
         private void BilliD_textbox_TextChanged(object sender, EventArgs e)
@@ -123,6 +116,27 @@ namespace Electric_billing_system
                     BilliD_textbox.Focus();
                 }
             }
+        }
+
+        private void CurrentConsumption_TextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (CurrentConsumption_TextBox.Text != "")
+            {
+
+                if (Convert.ToInt32(CurrentConsumption_TextBox.Text) < Convert.ToInt32(PreviousConsumption_textbox.Text))
+                {
+                    DialogResult result = MessageBox.Show("Current Consumption cannot be less than the Previous", "Error", MessageBoxButtons.OK);
+                    if (result == DialogResult.OK)
+                    {
+                        CurrentConsumption_TextBox.Focus();
+                    }
+                }
+            }
+        }
+
+        private void BilliD_textbox_Validating(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

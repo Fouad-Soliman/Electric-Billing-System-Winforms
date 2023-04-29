@@ -28,10 +28,7 @@ namespace Electric_billing_system
         }
 
 
-        private void AddPH_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void savebut_Click(object sender, EventArgs e)
         {
@@ -53,16 +50,16 @@ namespace Electric_billing_system
 
                         MessageBox.Show("PowerHouse Added successfully");
 
+                    OracleCommand cmd6 = new OracleCommand();
+                    cmd6.Connection = conn;
+
+                    cmd6.CommandText = $"insert into SYSLOG (ADMINID,ACTIONDATETIME,ACTION,METERID,POWERHOUSEID) values ({A_id}, systimestamp, 'PowerHouse Added ', NULL,{idtxt.Text})";
+                    int z = cmd6.ExecuteNonQuery();
+
 
                     }
                 }
                 catch (Exception x) { MessageBox.Show(x.Message);
-                
-                OracleCommand cmd6 = new OracleCommand();
-                cmd6.Connection = conn;
-
-                cmd6.CommandText = $"insert into SYSLOG (ADMINID,ACTIONDATETIME,ACTION,METERID,POWERHOUSEID) values ({A_id}, systimestamp, '{nametxt.Text}PowerHouse Added ', NULL,{idtxt.Text})";
-                int z = cmd6.ExecuteNonQuery();
 
                 }
             }

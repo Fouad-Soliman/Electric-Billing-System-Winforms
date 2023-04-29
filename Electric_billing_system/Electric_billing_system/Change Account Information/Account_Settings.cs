@@ -29,8 +29,6 @@
 		private System.Windows.Forms.GroupBox AccountGbox;
 		private System.Windows.Forms.Label Last_Name_label;
 
-		private System.Windows.Forms.Label Phone;
-
 		private Label First_Name_error_label;
 		private Label First_Name_label;
 		private TextBox First_Name_textbox;
@@ -44,13 +42,7 @@
 		static OracleConnection conn;
 
 
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Label label5;
 
-
-
-
-		private System.Windows.Forms.TextBox Phone_Textbox;
 
 
 
@@ -122,7 +114,6 @@
 		private System.Windows.Forms.PictureBox Last_Name_pictureBox2;
 		private System.Windows.Forms.PictureBox Username_picturebox2;
 		private System.Windows.Forms.PictureBox Username_picturebox;
-		private System.Windows.Forms.PictureBox Phone_picturebox2;
 		private System.Windows.Forms.PictureBox pictureBox3;
 		private System.Windows.Forms.PictureBox Password_pictureBox;
 		private System.Windows.Forms.PictureBox pictureBox5;
@@ -134,8 +125,6 @@
 		private System.Windows.Forms.PictureBox pictureBox6;
 		private System.Windows.Forms.PictureBox Email_picturebox;
 
-
-		private System.Windows.Forms.PictureBox Phone_picturebox;
 
 
 
@@ -152,7 +141,6 @@
 		String RandomCode;
 		private System.Windows.Forms.Label Username_error_label;
 		private System.Windows.Forms.Label Last_name_error_label;
-		private System.Windows.Forms.Label Phone_error_label;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label Reenter;
 		private System.Windows.Forms.PictureBox pictureBox7;
@@ -176,10 +164,6 @@
 		private Siticone.Desktop.UI.WinForms.SiticoneButton Send_code_button;
 		private System.Windows.Forms.Label step2_code_label;
 		private System.Windows.Forms.Label step2_error_label;
-		private Siticone.Desktop.UI.WinForms.SiticoneButton Browse_button;
-		private Siticone.Desktop.UI.WinForms.SiticoneButton No_pic_button;
-		private Siticone.Desktop.UI.WinForms.SiticoneButton New_pic_button;
-		private Siticone.Desktop.UI.WinForms.SiticoneButton Delete_button;
 
 		#region Windows Form Designer generated code
 		void Show_Account()
@@ -195,7 +179,7 @@
 			Username_Textbox.Text = user;
 			Password_Textbox.Text = password;
 			Email_Textbox.Text = email;
-			Phone_Textbox.Text = phone;
+			//Phone_Textbox.Text = phone;
 			if (send_email == 'T')
 			{
 				Email_checkBox.Checked = true;
@@ -258,12 +242,12 @@
 			//String  str3 = new String(wow);
 			//if (System.IO.File.Exists(str3))
 			//{
-			//	pictureBox1.ImageLocation = str3;
+			//	/*pictureBox1.ImageLocation */= str3;
 			//	pictureBox2.ImageLocation = str3;
 			//}
 			//else
 			//{
-			//	pictureBox1.ImageLocation = "PICs\\guest.jpg";
+			//	/*pictureBox1.ImageLocation */= "PICs\\guest.jpg";
 			//	pictureBox2.ImageLocation = "PICs\\guest.jpg";
 			//}
 			//GraphicsPath  gp = new GraphicsPath();
@@ -306,7 +290,7 @@
 			Show_Account();
 			changed = false;
 			old_username = Username_Textbox.Text;
-			old_phone = Phone_Textbox.Text;
+			//old_phone = Phone_Textbox.Text;
 			old_email = Email_Textbox.Text;
 			old_name = Lastname_Textbox.Text;
 			old_pass = Password_Textbox.Text;
@@ -314,7 +298,7 @@
 
 			labels.Add(label9);
 			labels.Add(Last_Name_label);
-			labels.Add(Phone);
+			//labels.Add(Phone);
 			labels.Add(Username);
 			labels.Add(Email_label);
 			labels.Add(step2_code_label);
@@ -322,7 +306,7 @@
 
 			pics.Add(Password_pictureBox);
 			pics.Add(Last_Name_picturebox);
-			pics.Add(Phone_picturebox);
+			//pics.Add(Phone_picturebox);
 			pics.Add(Username_picturebox);
 			pics.Add(Email_picturebox);
 			pics.Add(VCODE_pictureBox);
@@ -337,7 +321,7 @@
 			Last_name_error_label.Hide();
 			Password_label_error.Hide();
 			Reenter_error_label.Hide();
-			Phone_error_label.Hide();
+			//Phone_error_label.Hide();
 			email_error_label.Hide();
 		}
 		private void textBox3_TextChanged(System.Object sender, System.EventArgs e)
@@ -396,7 +380,7 @@
 			if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 			{
 				//MyCamera.Stop();
-				pictureBox1.ImageLocation = dialog.FileName;
+				///*pictureBox1.ImageLocation */= dialog.FileName;
 				pictureBox2.ImageLocation = dialog.FileName;
 				changed = true;
 			}
@@ -424,20 +408,20 @@
 				System.IO.File.Delete(old_u);
 				string wow = "PICs\\Doctors\\" + username + ".jpg";
 				String str3 = wow;
-				if (pictureBox1.ImageLocation != "System\\PICs\\guest.jpg")
-				{
-					if (System.IO.File.Exists(str3))
-					{
-						System.IO.File.Delete(str3);
-						pictureBox1.Image.Save(str3, ImageFormat.Jpeg);
-					}
-					else
-						pictureBox1.Image.Save(str3, ImageFormat.Jpeg);
-				}
-				else
-				{
-					System.IO.File.Delete(str3);
-				}
+				//if (/*pictureBox1.ImageLocation */!= "System\\PICs\\guest.jpg")
+				//{
+				//	if (System.IO.File.Exists(str3))
+				//	{
+				//		System.IO.File.Delete(str3);
+				//		pictureBox1.Image.Save(str3, ImageFormat.Jpeg);
+				//	}
+				//	else
+				//		pictureBox1.Image.Save(str3, ImageFormat.Jpeg);
+				//}
+				//else
+				//{
+				//	System.IO.File.Delete(str3);
+				//}
 			}
 			else if (who == 'p')
 			{
@@ -448,21 +432,21 @@
 				System.IO.File.Delete(old_u);
 				string wow = "PICs\\Patients\\" + username + ".jpg";
 				String str3 = wow;
-				if (pictureBox1.ImageLocation != "System\\PICs\\guest.jpg")
-				{
-					if (System.IO.File.Exists(str3))
-					{
-						System.IO.File.Delete(str3);
-						pictureBox1.Image.Save(str3, ImageFormat.Jpeg);
-					}
-					else
-						pictureBox1.Image.Save(str3, ImageFormat.Jpeg);
-				}
-				else
-				{
-					System.IO.File.Delete(str3);
+				//if (/*pictureBox1.ImageLocation */!= "System\\PICs\\guest.jpg")
+				//{
+				//	if (System.IO.File.Exists(str3))
+				//	{
+				//		System.IO.File.Delete(str3);
+				//		pictureBox1.Image.Save(str3, ImageFormat.Jpeg);
+				//	}
+				//	else
+				//		pictureBox1.Image.Save(str3, ImageFormat.Jpeg);
+				//}
+				//else
+				//{
+				//	System.IO.File.Delete(str3);
 
-				}
+				//}
 			}
 		}
 
@@ -486,10 +470,10 @@
 		{
 			return Email_Textbox.Text;
 		}
-		public String GetPhone()
-		{
-			return Phone_Textbox.Text;
-		}
+		//public String GetPhone()
+		//{
+		//	return Phone_Textbox.Text;
+		//}
 		public bool change_occured()
 		{
 			if (changed == false)
@@ -538,13 +522,13 @@
 				return false;
 
 		}
-		public bool phone_or_name_changed()
-		{
-			if (Phone.ForeColor == Color.FromArgb(0, 255, 0) || Last_Name_label.ForeColor == Color.FromArgb(0, 255, 0))
-				return true;
-			else
-				return false;
-		}
+		//public bool phone_or_name_changed()
+		//{
+		//	if (Phone.ForeColor == Color.FromArgb(0, 255, 0) || Last_Name_label.ForeColor == Color.FromArgb(0, 255, 0))
+		//		return true;
+		//	else
+		//		return false;
+		//}
 		private void Security_button_Click(System.Object sender, System.EventArgs e)
 		{
 			SecurityGbox.Show();
@@ -572,7 +556,7 @@
 		}
 		private void No_pic_button_Click(System.Object sender, System.EventArgs e)
 		{
-			pictureBox1.ImageLocation = "System\\PICs\\guest.jpg";
+			///*pictureBox1.ImageLocation */= "System\\PICs\\guest.jpg";
 			pictureBox2.ImageLocation = "System\\PICs\\guest.jpg";
 			changed = true;
 
@@ -609,12 +593,12 @@
 					if (System.IO.File.Exists(temp_loc))
 					{
 						changed = true;
-						pictureBox1.ImageLocation = temp_loc;
+						///*/*pictureBox1.ImageLocation */= temp_loc;*/
 						pictureBox2.ImageLocation = temp_loc;
 					}
 					else if (System.IO.File.Exists(org_loc))
 					{
-						pictureBox1.ImageLocation = org_loc;
+						///*pictureBox1.ImageLocation */= org_loc;
 						pictureBox2.ImageLocation = org_loc;
 
 					}
@@ -626,12 +610,12 @@
 					if (System.IO.File.Exists(temp_loc))
 					{
 						changed = true;
-						pictureBox1.ImageLocation = temp_loc;
+						///*pictureBox1.ImageLocation */= temp_loc;
 						pictureBox2.ImageLocation = temp_loc;
 					}
 					else if (System.IO.File.Exists(org_loc))
 					{
-						pictureBox1.ImageLocation = org_loc;
+						///*pictureBox1.ImageLocation */= org_loc;
 						pictureBox2.ImageLocation = org_loc;
 
 					}
@@ -753,17 +737,17 @@
 						System.IO.File.Delete(old_u);
 						string wow = "System\\PICsPICs\\Doctors\\" + username + ".jpg";
 						string str3 = wow;
-						if (pictureBox1.ImageLocation != "System\\PICs\\guest.jpg")
-						{
-							if (System.IO.File.Exists(str3))
-							{
-								System.IO.File.Delete(str3);
-							}
-						}
-						else
-						{
-							System.IO.File.Delete(str3);
-						}
+						//if (/*pictureBox1.ImageLocation */!= "System\\PICs\\guest.jpg")
+						//{
+						//	if (System.IO.File.Exists(str3))
+						//	{
+						//		System.IO.File.Delete(str3);
+						//	}
+						//}
+						//else
+						//{
+						//	System.IO.File.Delete(str3);
+						//}
 					}
 					//Deleting all patient's pictures(Temp,old username, new username)
 					else if (who == 'p')
@@ -775,18 +759,18 @@
 						System.IO.File.Delete(old_u);
 						string wow = "System\\PICsPICs\\Patients\\" + username + ".jpg";
 						string str3 = wow;
-						if (pictureBox1.ImageLocation != "System\\PICs\\guest.jpg")
-						{
-							if (System.IO.File.Exists(str3))
-							{
-								System.IO.File.Delete(str3);
-							}
-						}
-						else
-						{
-							System.IO.File.Delete(str3);
+						//if (/*pictureBox1.ImageLocation */!= "System\\PICs\\guest.jpg")
+						//{
+						//	if (System.IO.File.Exists(str3))
+						//	{
+						//		System.IO.File.Delete(str3);
+						//	}
+						//}
+						//else
+						//{
+						//	System.IO.File.Delete(str3);
 
-						}
+						//}
 					}
 				}
 
@@ -1050,7 +1034,7 @@
 		}
 		private void Phone_Textbox_MouseClick(System.Object sender, System.Windows.Forms.MouseEventArgs e)
 		{
-			Bluen(Phone_picturebox, Phone);
+			//Bluen(Phone_picturebox, Phone);
 		}
 		private void Fullname_Textbox_TextChanged(System.Object sender, System.EventArgs e)
 		{
@@ -1348,69 +1332,69 @@
 		}
 		private void Phone_Textbox_Validating(System.Object sender, System.ComponentModel.CancelEventArgs e)
 		{
-			string old_p = old_phone;
-			string new_p = Phone_Textbox.Text;
-			double mphone = System.Convert.ToDouble(Phone_Textbox.Text);
-			double cphone = mphone;
-			bool vphone = true;
-			int lengthCount = 1;
-			if (old_p != new_p)
-			{
-				for (; cphone > 0.9; cphone /= 10, lengthCount++) ;//Here we count the entered numbers
-				if (lengthCount != 11)
-				{
-					vphone = false;
-					Phone_error_label.Text = "Phone numbers are 11 numbers";
-					Phone_error_label.Show();
+			//string old_p = old_phone;
+			////string new_p = Phone_Textbox.Text;
+			////double mphone = System.Convert.ToDouble(Phone_Textbox.Text);
+			//double cphone = mphone;
+			//bool vphone = true;
+			//int lengthCount = 1;
+			//if (old_p != new_p)
+			//{
+			//	for (; cphone > 0.9; cphone /= 10, lengthCount++) ;//Here we count the entered numbers
+			//	if (lengthCount != 11)
+			//	{
+			//		vphone = false;
+			//		Phone_error_label.Text = "Phone numbers are 11 numbers";
+			//		Phone_error_label.Show();
 
-				}
-				int[] check = new int[11]; ;
-				for (int i = lengthCount - 1; i >= 0; i--)
-				{
-					check[i] = (int)mphone % 10;
-					mphone /= 10;
-				}
-				if (check[2] != 1 && check[2] != 2 && check[2] != 0 && check[2] != 5)
-				{
-					Phone_error_label.Text = "Invalid phone number";
-					Phone_error_label.Show();
-					vphone = false;
-				}
-				if (vphone)
-				{
-					Blacken(Phone_picturebox, Phone);
-					e.Cancel = false;
-					bool check_phone = false;
-					for (int i = 0; i < PHONES.Count; i++)
-					{
-						if (Phone_Textbox.Text == PHONES[i])
-						{
-							Red(Phone_picturebox, Phone);
-							e.Cancel = true;
-							Phone_error_label.Text = "This phone number is already taken\n";
-							Phone_error_label.Show();
-							check_phone = true;
-							break;
-						}
-					}
-					if (!check_phone)
-					{
-						Phone_error_label.Hide();
-						Green(Phone_picturebox, Phone);
+			//	}
+			//	int[] check = new int[11]; ;
+			//	for (int i = lengthCount - 1; i >= 0; i--)
+			//	{
+			//		check[i] = (int)mphone % 10;
+			//		mphone /= 10;
+			//	}
+			//	if (check[2] != 1 && check[2] != 2 && check[2] != 0 && check[2] != 5)
+			//	{
+			//		Phone_error_label.Text = "Invalid phone number";
+			//		Phone_error_label.Show();
+			//		vphone = false;
+			//	}
+			//	if (vphone)
+			//	{
+			//		Blacken(Phone_picturebox, Phone);
+			//		e.Cancel = false;
+			//		bool check_phone = false;
+			//		for (int i = 0; i < PHONES.Count; i++)
+			//		{
+			//			if (Phone_Textbox.Text == PHONES[i])
+			//			{
+			//				Red(Phone_picturebox, Phone);
+			//				e.Cancel = true;
+			//				Phone_error_label.Text = "This phone number is already taken\n";
+			//				Phone_error_label.Show();
+			//				check_phone = true;
+			//				break;
+			//			}
+			//		}
+			//		if (!check_phone)
+			//		{
+			//			Phone_error_label.Hide();
+			//			Green(Phone_picturebox, Phone);
 
-					}
-				}
-				else
-				{
-					Red(Phone_picturebox, Phone);
-					e.Cancel = true;
-				}
-			}
-			else
-			{
-				Blacken(Phone_picturebox, Phone);
-				Phone_error_label.Hide();
-			}
+			//		}
+			//	}
+			//	else
+			//	{
+			//		Red(Phone_picturebox, Phone);
+			//		e.Cancel = true;
+			//	}
+			//}
+			//else
+			//{
+			//	Blacken(Phone_picturebox, Phone);
+			//	Phone_error_label.Hide();
+			//}
 		}
 
 		private void Password_Textbox_Validating(System.Object sender, System.ComponentModel.CancelEventArgs e)
@@ -1821,7 +1805,7 @@
         {
             OracleCommand c = new OracleCommand();
             c.Connection = conn;
-            c.CommandText = $"select '{columnName}' from'{tableName}' where CustomerID= '{Convert.ToInt32(id)}'";
+            c.CommandText = $"select '{columnName}' from'{tableName}' where CustomerID= {Convert.ToInt32(id)}";
             c.CommandType = CommandType.Text;
             OracleDataReader dr = c.ExecuteReader();
             if (dr.Read())

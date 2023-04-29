@@ -128,7 +128,8 @@ namespace Electric_billing_system
         {
             this.Hide();
             registration_form CustomerEdit = new registration_form();
-            CustomerEdit.Show();
+            CustomerEdit.ShowDialog();
+            this.Show();
         }
         private void label1_Click(object sender, EventArgs e)
         {

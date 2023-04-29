@@ -29,7 +29,7 @@ namespace Electric_billing_system
             conn.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "select BillID from Bill where  PAYMENTTYPE = 'CASH' and PAYMENTSTATUS = 'n' ";
+            cmd.CommandText = "select BillID from Bill where  PAYMENTTYPE = 'CASH' and Approved = 'n' ";
             OracleDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -72,10 +72,10 @@ namespace Electric_billing_system
         {
             OracleCommand cmd4 = new OracleCommand();
             cmd4.Connection = conn;
-            cmd4.CommandText = "update bill set PAYMENTSTATUS = 'y' where Billid = :Billid";
+            cmd4.CommandText = "update bill set Approved = 'y' where Billid = :Billid";
             cmd4.Parameters.Add("Billid", BilliD_comboBox.SelectedItem.ToString());
             int r = cmd4.ExecuteNonQuery();
-            Electric_billing_system.Account_Settings.Notification(CustomerID_textBox.Text,"CASH",TotalFees_textBox.Text,PaymentDate_textBox.Text);
+            //Electric_billing_system.Account_Settings.Notification(CustomerID_textBox.Text,"CASH",TotalFees_textBox.Text,PaymentDate_textBox.Text);
             OracleCommand cmd6 = new OracleCommand();
             cmd6.Connection = conn;
 

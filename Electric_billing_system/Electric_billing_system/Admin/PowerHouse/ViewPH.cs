@@ -18,6 +18,7 @@ namespace Electric_billing_system
         OracleConnection conn;
         string phName;
         int A_id;
+        string phid;
         public ViewPH(string phName,int A_id)
         {
             InitializeComponent();
@@ -41,6 +42,7 @@ namespace Electric_billing_system
             {
                 nametxt.Text = dr[0].ToString();
                 idtxt.Text = dr[1].ToString();
+                phid = dr[1].ToString();
                 captxt.Text = dr[2].ToString();
                 addresstxt.Text = dr[3].ToString();
                 fueltxt.Text = dr[4].ToString();
@@ -99,9 +101,15 @@ namespace Electric_billing_system
                 OracleCommand cmd6 = new OracleCommand();
                 cmd6.Connection = conn;
 
-                cmd6.CommandText = $"insert into SYSLOG (ADMINID,ACTIONDATETIME,ACTION,METERID,POWERHOUSEID) values ({A_id}, systimestamp, '{nametxt.Text}PowerHouse Edited ', NULL,{idtxt.Text})";
+                cmd6.CommandText = $"insert into SYSLOG (ADMINID,ACTIONDATETIME,ACTION,METERID,POWERHOUSEID) values ({A_id}, systimestamp, 'PowerHouse edited ', NULL,{phid})";
                 int z = cmd6.ExecuteNonQuery();
             }
         }
+
+        private void idtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+//cmd6.CommandText = $"insert into SYSLOG (ADMINID,ACTIONDATETIME,ACTION,METERID,POWERHOUSEID) values ({A_ID}, systimestamp, 'Create Bill', {MeterID_comboBox.Text.ToString()}, Null)";

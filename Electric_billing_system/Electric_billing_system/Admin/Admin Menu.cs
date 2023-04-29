@@ -54,7 +54,11 @@ namespace Electric_billing_system
 
         private void Admin_Menu_Load(object sender, EventArgs e)
         {
-
+            DropDown_Customer.Hide();
+            Logout_label.Hide();
+            Logout_pictureBox.Hide();
+            Quit_label.Hide();
+            Quit_pictureBox.Hide();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -78,6 +82,18 @@ namespace Electric_billing_system
                 Quit_pictureBox.Show();
                 
             }
+        }
+
+        private void Quit_pictureBox_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Thank you for using our system.");
+            Application.Exit();
+        }
+
+        private void Logout_pictureBox_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

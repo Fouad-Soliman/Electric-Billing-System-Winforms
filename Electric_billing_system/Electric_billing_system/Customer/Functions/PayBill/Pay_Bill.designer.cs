@@ -44,6 +44,8 @@
             this.Address_label = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.billidcmb = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // pay_button
@@ -60,7 +62,7 @@
             // meter_choice
             // 
             this.meter_choice.FormattingEnabled = true;
-            this.meter_choice.Location = new System.Drawing.Point(256, 28);
+            this.meter_choice.Location = new System.Drawing.Point(151, 33);
             this.meter_choice.Margin = new System.Windows.Forms.Padding(4);
             this.meter_choice.Name = "meter_choice";
             this.meter_choice.Size = new System.Drawing.Size(160, 24);
@@ -89,7 +91,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(184, 32);
+            this.label7.Location = new System.Drawing.Point(79, 37);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 17);
@@ -206,12 +208,33 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Payment Method";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(365, 33);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 17);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Bill ID";
+            // 
+            // billidcmb
+            // 
+            this.billidcmb.FormattingEnabled = true;
+            this.billidcmb.Location = new System.Drawing.Point(487, 32);
+            this.billidcmb.Margin = new System.Windows.Forms.Padding(4);
+            this.billidcmb.Name = "billidcmb";
+            this.billidcmb.Size = new System.Drawing.Size(160, 24);
+            this.billidcmb.TabIndex = 27;
+            // 
             // Pay_Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(694, 355);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.billidcmb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Connection_type);
             this.Controls.Add(this.Connection_Type_txtbox);
@@ -230,7 +253,7 @@
             this.Controls.Add(this.Cash_rdio);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pay_Bill";
-            this.Text = "Form2";
+            this.Text = "Pay Bill";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -254,5 +277,7 @@
         private System.Windows.Forms.Label Address_label;
         private System.Windows.Forms.TextBox Address;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox billidcmb;
     }
 }

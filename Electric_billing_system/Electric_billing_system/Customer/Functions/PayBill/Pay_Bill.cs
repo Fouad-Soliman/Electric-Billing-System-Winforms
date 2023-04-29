@@ -19,7 +19,7 @@ namespace Electric_billing_system
         string ordb = "Data source=orcl;User Id=scott;Password=tiger;";
         OracleConnection conn;
         int CustID;
-
+        string  billid;
         public Pay_Bill(string c_id)
         {
             CustID= Convert.ToInt32( c_id);
@@ -31,12 +31,13 @@ namespace Electric_billing_system
             conn.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
-            cmd.CommandText = $"select MeterID from Bill where  Approved <> 'y' and  CustomerID={CustID} ";
+            cmd.CommandText = $"select Distinct MeterID from Bill where  Approved <> 'y' and  CustomerID={CustID} ";
             cmd.CommandType = CommandType.Text;
             OracleDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 meter_choice.Items.Add(dr[0]);
+                
             }
             dr.Close();
         }
@@ -61,6 +62,17 @@ namespace Electric_billing_system
                 Previous_reading.Text = dr[5].ToString();
             }
             dr.Close();
+            OracleCommand cmd2 = new OracleCommand();
+            cmd2.Connection = conn;
+            cmd2.CommandText = $"select Billid from Bill where  Approved <> 'y' and  CustomerID={CustID} and meterid={meter_choice.Text}";
+            cmd2.CommandType = CommandType.Text;
+            OracleDataReader dr2 = cmd2.ExecuteReader();
+            while (dr2.Read())
+            {
+                billidcmb.Items.Add(dr2[0]);
+
+            }
+            dr.Close();
 
         }
 
@@ -78,7 +90,7 @@ namespace Electric_billing_system
                 //cid = Convert.ToInt32(result);
                 OracleCommand cmd2 = new OracleCommand();
                 cmd2.Connection = conn;
-                cmd2.CommandText = "update bill set approved='n',paymenttype='cash' where meterid=:id ";
+                cmd2.CommandText = $"update bill set approved='n',paymenttype='CASH' where meterid=:id and billid={billidcmb.Text}";
 
 
               cmd2.Parameters.Add("id", meter_choice.SelectedItem.ToString());

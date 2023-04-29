@@ -180,6 +180,7 @@ namespace Electric_billing_system
             this.Quit_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Quit_pictureBox.TabIndex = 70;
             this.Quit_pictureBox.TabStop = false;
+            this.Quit_pictureBox.Click += new System.EventHandler(this.Quit_pictureBox_Click);
             // 
             // Logout_pictureBox
             // 
@@ -193,6 +194,7 @@ namespace Electric_billing_system
             this.Logout_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Logout_pictureBox.TabIndex = 69;
             this.Logout_pictureBox.TabStop = false;
+            this.Logout_pictureBox.Click += new System.EventHandler(this.Logout_pictureBox_Click);
             // 
             // Quit_label
             // 

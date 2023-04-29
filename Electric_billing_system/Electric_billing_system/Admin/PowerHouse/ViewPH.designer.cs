@@ -68,6 +68,7 @@ namespace Electric_billing_system
             this.idtxt.ReadOnly = true;
             this.idtxt.Size = new System.Drawing.Size(229, 22);
             this.idtxt.TabIndex = 2;
+            this.idtxt.TextChanged += new System.EventHandler(this.idtxt_TextChanged);
             // 
             // addresstxt
             // 

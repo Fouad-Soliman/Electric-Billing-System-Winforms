@@ -33,22 +33,11 @@ namespace Electric_billing_system
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Account_Settings));
             this.Lastname_Textbox = new System.Windows.Forms.TextBox();
             this.Username_Textbox = new System.Windows.Forms.TextBox();
-            this.Phone_Textbox = new System.Windows.Forms.TextBox();
             this.AccountGbox = new System.Windows.Forms.GroupBox();
-            this.Delete_button = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.No_pic_button = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.New_pic_button = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.Browse_button = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.Phone_error_label = new System.Windows.Forms.Label();
             this.First_Name_error_label = new System.Windows.Forms.Label();
             this.Last_name_error_label = new System.Windows.Forms.Label();
             this.Username_error_label = new System.Windows.Forms.Label();
-            this.Phone = new System.Windows.Forms.Label();
-            this.Phone_picturebox2 = new System.Windows.Forms.PictureBox();
-            this.Phone_picturebox = new System.Windows.Forms.PictureBox();
             this.Username = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.First_Name_label = new System.Windows.Forms.Label();
             this.Last_Name_label = new System.Windows.Forms.Label();
             this.First_Name_textbox = new System.Windows.Forms.TextBox();
@@ -101,9 +90,6 @@ namespace Electric_billing_system
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.AccountGbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Phone_picturebox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Phone_picturebox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.First_Name_pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.First_Name_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Last_Name_pictureBox2)).BeginInit();
@@ -151,38 +137,14 @@ namespace Electric_billing_system
             this.Username_Textbox.TextChanged += new System.EventHandler(this.Username_Textbox_TextChanged);
             this.Username_Textbox.Validating += new System.ComponentModel.CancelEventHandler(this.Username_Textbox_Validating);
             // 
-            // Phone_Textbox
-            // 
-            this.Phone_Textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Phone_Textbox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Phone_Textbox.Location = new System.Drawing.Point(35, 357);
-            this.Phone_Textbox.Name = "Phone_Textbox";
-            this.Phone_Textbox.Size = new System.Drawing.Size(370, 27);
-            this.Phone_Textbox.TabIndex = 3;
-            this.Phone_Textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Phone_Textbox_MouseClick);
-            this.Phone_Textbox.TextChanged += new System.EventHandler(this.Phone_Textbox_TextChanged);
-            this.Phone_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Phone_Textbox_KeyPress);
-            this.Phone_Textbox.Validating += new System.ComponentModel.CancelEventHandler(this.Phone_Textbox_Validating);
-            // 
             // AccountGbox
             // 
             this.AccountGbox.BackColor = System.Drawing.Color.White;
-            this.AccountGbox.Controls.Add(this.Delete_button);
-            this.AccountGbox.Controls.Add(this.No_pic_button);
-            this.AccountGbox.Controls.Add(this.New_pic_button);
-            this.AccountGbox.Controls.Add(this.Browse_button);
-            this.AccountGbox.Controls.Add(this.Phone_error_label);
             this.AccountGbox.Controls.Add(this.First_Name_error_label);
             this.AccountGbox.Controls.Add(this.Last_name_error_label);
             this.AccountGbox.Controls.Add(this.Username_error_label);
-            this.AccountGbox.Controls.Add(this.Phone);
-            this.AccountGbox.Controls.Add(this.Phone_Textbox);
-            this.AccountGbox.Controls.Add(this.Phone_picturebox2);
-            this.AccountGbox.Controls.Add(this.Phone_picturebox);
             this.AccountGbox.Controls.Add(this.Username_Textbox);
             this.AccountGbox.Controls.Add(this.Username);
-            this.AccountGbox.Controls.Add(this.pictureBox1);
-            this.AccountGbox.Controls.Add(this.label5);
             this.AccountGbox.Controls.Add(this.First_Name_label);
             this.AccountGbox.Controls.Add(this.Last_Name_label);
             this.AccountGbox.Controls.Add(this.First_Name_textbox);
@@ -201,93 +163,6 @@ namespace Electric_billing_system
             this.AccountGbox.TabIndex = 4;
             this.AccountGbox.TabStop = false;
             this.AccountGbox.Enter += new System.EventHandler(this.AccountGbox_Enter);
-            // 
-            // Delete_button
-            // 
-            this.Delete_button.BackColor = System.Drawing.Color.White;
-            this.Delete_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Delete_button.BorderColor = System.Drawing.Color.Red;
-            this.Delete_button.BorderRadius = 18;
-            this.Delete_button.BorderThickness = 2;
-            this.Delete_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Delete_button.FillColor = System.Drawing.Color.Transparent;
-            this.Delete_button.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.Delete_button.ForeColor = System.Drawing.Color.Red;
-            this.Delete_button.Location = new System.Drawing.Point(734, 644);
-            this.Delete_button.Name = "Delete_button";
-            this.Delete_button.PressedColor = System.Drawing.Color.WhiteSmoke;
-            this.Delete_button.PressedDepth = 50;
-            this.Delete_button.Size = new System.Drawing.Size(117, 59);
-            this.Delete_button.TabIndex = 91;
-            this.Delete_button.Text = "Delete Account";
-            this.Delete_button.Click += new System.EventHandler(this.Delete_button_Click);
-            // 
-            // No_pic_button
-            // 
-            this.No_pic_button.BackColor = System.Drawing.Color.White;
-            this.No_pic_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.No_pic_button.BorderRadius = 18;
-            this.No_pic_button.BorderThickness = 2;
-            this.No_pic_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.No_pic_button.FillColor = System.Drawing.Color.Transparent;
-            this.No_pic_button.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.No_pic_button.ForeColor = System.Drawing.Color.Black;
-            this.No_pic_button.Location = new System.Drawing.Point(505, 506);
-            this.No_pic_button.Name = "No_pic_button";
-            this.No_pic_button.PressedColor = System.Drawing.Color.WhiteSmoke;
-            this.No_pic_button.PressedDepth = 50;
-            this.No_pic_button.Size = new System.Drawing.Size(117, 59);
-            this.No_pic_button.TabIndex = 90;
-            this.No_pic_button.Text = "No Profile Picture";
-            this.No_pic_button.Click += new System.EventHandler(this.No_pic_button_Click);
-            // 
-            // New_pic_button
-            // 
-            this.New_pic_button.BackColor = System.Drawing.Color.White;
-            this.New_pic_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.New_pic_button.BorderRadius = 18;
-            this.New_pic_button.BorderThickness = 2;
-            this.New_pic_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.New_pic_button.FillColor = System.Drawing.Color.Transparent;
-            this.New_pic_button.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.New_pic_button.ForeColor = System.Drawing.Color.Black;
-            this.New_pic_button.Location = new System.Drawing.Point(505, 441);
-            this.New_pic_button.Name = "New_pic_button";
-            this.New_pic_button.PressedColor = System.Drawing.Color.WhiteSmoke;
-            this.New_pic_button.PressedDepth = 50;
-            this.New_pic_button.Size = new System.Drawing.Size(117, 59);
-            this.New_pic_button.TabIndex = 89;
-            this.New_pic_button.Text = "Take a picture";
-            this.New_pic_button.Click += new System.EventHandler(this.New_pic_button_Click);
-            // 
-            // Browse_button
-            // 
-            this.Browse_button.BackColor = System.Drawing.Color.White;
-            this.Browse_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Browse_button.BorderRadius = 15;
-            this.Browse_button.BorderThickness = 2;
-            this.Browse_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Browse_button.FillColor = System.Drawing.Color.Transparent;
-            this.Browse_button.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.Browse_button.ForeColor = System.Drawing.Color.Black;
-            this.Browse_button.Location = new System.Drawing.Point(640, 484);
-            this.Browse_button.Name = "Browse_button";
-            this.Browse_button.PressedColor = System.Drawing.Color.WhiteSmoke;
-            this.Browse_button.PressedDepth = 50;
-            this.Browse_button.Size = new System.Drawing.Size(117, 40);
-            this.Browse_button.TabIndex = 88;
-            this.Browse_button.Text = "Browse";
-            this.Browse_button.Click += new System.EventHandler(this.Browse_button_Click);
-            // 
-            // Phone_error_label
-            // 
-            this.Phone_error_label.AutoSize = true;
-            this.Phone_error_label.ForeColor = System.Drawing.Color.Red;
-            this.Phone_error_label.Location = new System.Drawing.Point(455, 366);
-            this.Phone_error_label.Name = "Phone_error_label";
-            this.Phone_error_label.Size = new System.Drawing.Size(45, 19);
-            this.Phone_error_label.TabIndex = 21;
-            this.Phone_error_label.Text = "label1";
             // 
             // First_Name_error_label
             // 
@@ -320,34 +195,6 @@ namespace Electric_billing_system
             this.Username_error_label.TabIndex = 19;
             this.Username_error_label.Text = "label1";
             // 
-            // Phone
-            // 
-            this.Phone.AutoSize = true;
-            this.Phone.Font = new System.Drawing.Font("Segoe UI Semibold", 13F);
-            this.Phone.Location = new System.Drawing.Point(66, 330);
-            this.Phone.Name = "Phone";
-            this.Phone.Size = new System.Drawing.Size(82, 30);
-            this.Phone.TabIndex = 7;
-            this.Phone.Text = "Phone:";
-            this.Phone.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // Phone_picturebox2
-            // 
-            this.Phone_picturebox2.Location = new System.Drawing.Point(33, 350);
-            this.Phone_picturebox2.Name = "Phone_picturebox2";
-            this.Phone_picturebox2.Size = new System.Drawing.Size(375, 45);
-            this.Phone_picturebox2.TabIndex = 18;
-            this.Phone_picturebox2.TabStop = false;
-            // 
-            // Phone_picturebox
-            // 
-            this.Phone_picturebox.BackColor = System.Drawing.Color.Black;
-            this.Phone_picturebox.Location = new System.Drawing.Point(31, 346);
-            this.Phone_picturebox.Name = "Phone_picturebox";
-            this.Phone_picturebox.Size = new System.Drawing.Size(381, 53);
-            this.Phone_picturebox.TabIndex = 17;
-            this.Phone_picturebox.TabStop = false;
-            // 
             // Username
             // 
             this.Username.AutoSize = true;
@@ -357,25 +204,6 @@ namespace Electric_billing_system
             this.Username.Size = new System.Drawing.Size(117, 30);
             this.Username.TabIndex = 5;
             this.Username.Text = "Username:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(312, 420);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(159, 155);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
-            this.label5.Location = new System.Drawing.Point(50, 484);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(219, 41);
-            this.label5.TabIndex = 8;
-            this.label5.Text = " Profile picture";
             // 
             // First_Name_label
             // 
@@ -967,9 +795,9 @@ namespace Electric_billing_system
             this.ClientSize = new System.Drawing.Size(1205, 715);
             this.Controls.Add(this.Current_Tab_label);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.NotificationGbox);
             this.Controls.Add(this.AccountGbox);
             this.Controls.Add(this.SecurityGbox);
+            this.Controls.Add(this.NotificationGbox);
             this.Name = "Account_Settings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Account Settings";
@@ -977,9 +805,6 @@ namespace Electric_billing_system
             this.Load += new System.EventHandler(this.Account_Settings_Load);
             this.AccountGbox.ResumeLayout(false);
             this.AccountGbox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Phone_picturebox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Phone_picturebox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.First_Name_pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.First_Name_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Last_Name_pictureBox2)).EndInit();

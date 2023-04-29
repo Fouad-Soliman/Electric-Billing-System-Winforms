@@ -49,6 +49,7 @@
             this.CurrentConsumption_TextBox.Size = new System.Drawing.Size(220, 22);
             this.CurrentConsumption_TextBox.TabIndex = 1;
             this.CurrentConsumption_TextBox.TextChanged += new System.EventHandler(this.CurrentConsumption_TextBox_TextChanged);
+            this.CurrentConsumption_TextBox.Validating += new System.ComponentModel.CancelEventHandler(this.CurrentConsumption_TextBox_Validating);
             // 
             // CreateBill_Label
             // 
@@ -115,6 +116,7 @@
             this.BilliD_textbox.Size = new System.Drawing.Size(220, 22);
             this.BilliD_textbox.TabIndex = 9;
             this.BilliD_textbox.TextChanged += new System.EventHandler(this.BilliD_textbox_TextChanged);
+            this.BilliD_textbox.Validating += new System.ComponentModel.CancelEventHandler(this.BilliD_textbox_Validating);
             // 
             // BilliD_label
             // 

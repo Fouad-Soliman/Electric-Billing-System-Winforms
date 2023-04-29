@@ -42,8 +42,8 @@
             // 
             // cardNumber_txt
             // 
-            this.cardNumber_txt.Location = new System.Drawing.Point(384, 116);
-            this.cardNumber_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cardNumber_txt.Location = new System.Drawing.Point(307, 80);
+            this.cardNumber_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cardNumber_txt.MaxLength = 16;
             this.cardNumber_txt.Name = "cardNumber_txt";
             this.cardNumber_txt.Size = new System.Drawing.Size(132, 22);
@@ -53,8 +53,8 @@
             // 
             // cvv_txt
             // 
-            this.cvv_txt.Location = new System.Drawing.Point(384, 165);
-            this.cvv_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cvv_txt.Location = new System.Drawing.Point(307, 129);
+            this.cvv_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cvv_txt.MaxLength = 3;
             this.cvv_txt.Name = "cvv_txt";
             this.cvv_txt.Size = new System.Drawing.Size(132, 22);
@@ -65,8 +65,8 @@
             // 
             // submit_button
             // 
-            this.submit_button.Location = new System.Drawing.Point(400, 316);
-            this.submit_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.submit_button.Location = new System.Drawing.Point(323, 280);
+            this.submit_button.Margin = new System.Windows.Forms.Padding(4);
             this.submit_button.Name = "submit_button";
             this.submit_button.Size = new System.Drawing.Size(100, 28);
             this.submit_button.TabIndex = 3;
@@ -77,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(281, 116);
+            this.label1.Location = new System.Drawing.Point(204, 80);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 17);
@@ -87,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(343, 174);
+            this.label2.Location = new System.Drawing.Point(266, 138);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 17);
@@ -97,7 +97,7 @@
             // paymentLabel
             // 
             this.paymentLabel.AutoSize = true;
-            this.paymentLabel.Location = new System.Drawing.Point(436, 368);
+            this.paymentLabel.Location = new System.Drawing.Point(359, 332);
             this.paymentLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.paymentLabel.Name = "paymentLabel";
             this.paymentLabel.Size = new System.Drawing.Size(0, 17);
@@ -105,8 +105,8 @@
             // 
             // month_txt
             // 
-            this.month_txt.Location = new System.Drawing.Point(384, 213);
-            this.month_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.month_txt.Location = new System.Drawing.Point(307, 177);
+            this.month_txt.Margin = new System.Windows.Forms.Padding(4);
             this.month_txt.Name = "month_txt";
             this.month_txt.Size = new System.Drawing.Size(132, 22);
             this.month_txt.TabIndex = 7;
@@ -115,7 +115,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(295, 217);
+            this.label3.Location = new System.Drawing.Point(218, 181);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 17);
@@ -124,8 +124,8 @@
             // 
             // year_text
             // 
-            this.year_text.Location = new System.Drawing.Point(384, 258);
-            this.year_text.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year_text.Location = new System.Drawing.Point(307, 222);
+            this.year_text.Margin = new System.Windows.Forms.Padding(4);
             this.year_text.Name = "year_text";
             this.year_text.Size = new System.Drawing.Size(132, 22);
             this.year_text.TabIndex = 9;
@@ -133,7 +133,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(307, 262);
+            this.label4.Location = new System.Drawing.Point(230, 226);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 17);
@@ -144,7 +144,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(733, 369);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.year_text);
             this.Controls.Add(this.label3);
@@ -155,7 +156,7 @@
             this.Controls.Add(this.submit_button);
             this.Controls.Add(this.cvv_txt);
             this.Controls.Add(this.cardNumber_txt);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "credit";
             this.Text = "credit";
             this.Load += new System.EventHandler(this.credit_Load);
